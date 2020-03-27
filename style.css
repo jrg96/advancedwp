@@ -137,6 +137,15 @@ article.post .meta {
 	padding: 7px;
 }
 
+article.post .meta a {
+	color: #fff;
+	text-decoration: none;
+}
+
+article.post .meta a:hover {
+	color: #333;
+}
+
 .button {
 	background: #009acd;
 	color: #fff;
