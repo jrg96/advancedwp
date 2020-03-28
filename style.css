@@ -142,6 +142,10 @@ article.post .meta a {
 	text-decoration: none;
 }
 
+article .post-thumbnail img {
+	width: 100%;
+}
+
 article.post .meta a:hover {
 	color: #333;
 }
