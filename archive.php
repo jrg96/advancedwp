@@ -37,17 +37,7 @@
 			
 				<?php if(have_posts()) : ?>
 					<?php while(have_posts()) : the_post(); ?>
-						<div class="archive-post">
-							<h4>
-								<a href="<?php the_permalink(); ?>">
-									<?php the_title(); ?>
-								</a>
-							</h4>
-							
-							<p>
-								Posted on: <?php the_date('l jS \of F Y h:i:s A'); ?> 
-							</p>
-						</div>
+						<?php get_template_part('main_content'); ?>
 					<?php endwhile; ?>
 				<?php else : ?>
 					<?php echo wpautop('Sorry no posts were found'); ?>
