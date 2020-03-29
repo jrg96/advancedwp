@@ -43,11 +43,25 @@
 				<?php the_post_thumbnail(); ?>
 			</div>
 		<?php endif; ?>
-			
-		<p>
-			<?php echo the_excerpt(); ?>
-		</p>
 		
-		<a class="button" href="<?php the_permalink(); ?>">Read More</a>
+		
+		
+		<?php
+			/*
+			 * Check if we are displaying a single post or multiple posts
+			 */
+		?>
+		<?php if(is_single()):  ?>
+			<p>
+				<?php echo the_content(); ?>
+			</p>
+		<?php else: ?>
+			<p>
+				<?php echo the_excerpt(); ?>
+			</p>
+			
+			<a class="button" href="<?php the_permalink(); ?>">Read More</a>
+		<?php endif; ?>
+		
 	</article>
 <?php endif; ?>
