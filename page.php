@@ -4,6 +4,29 @@
 				<?php if(have_posts()) : ?>
 					<?php while(have_posts()) : the_post(); ?>
 						<article class="page">
+							
+							<?php if(page_how_many_children() > 0 || $post->post_parent > 0): ?>
+								<nav class="nav sub-nav">
+									<ul>
+										<span class="parent-link">
+											<a href="<?php the_permalink(get_top_parent()); ?>">
+												<?php echo get_the_title(get_top_parent()); ?>
+											</a>
+										</span>
+									
+										<?php
+											$args = array(
+												'child_of' => get_top_parent(),
+												'title_li' => ''
+											);
+										?>
+										
+										<?php wp_list_pages($args); ?>
+									</ul>
+								</nav>
+								<div class="clr" />
+							<?php endif; ?>
+							
 							<h2><?php the_title(); ?></h2>
 							<?php the_content(); ?>
 						</article>

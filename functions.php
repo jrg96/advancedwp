@@ -28,3 +28,27 @@
 	}
 
 	add_filter('excerpt_length', 'adv_set_excerpt_length');
+	
+	
+	/*
+	 * HELPER FUNCTIONS
+	 */
+	function get_top_parent()
+	{
+		global $post;
+		if ($post->post_parent)
+		{
+			$ancestors = get_post_ancestors($post->ID);
+			return $ancestors[0];
+		}
+		
+		return $post->ID;
+	}
+	
+	function page_how_many_children()
+	{
+		global $post;
+		
+		$pages = get_pages('child_of=' . $post->ID);
+		return count($pages);
+	}
