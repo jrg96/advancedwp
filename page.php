@@ -37,12 +37,9 @@
 			</div>
 			
 			<div class="side">
-				<div class="block">
-					<h3>Sidebar Head</h3>
-					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc placerat vehicula blandit. Praesent pharetra, libero nec fringilla</p>
-					
-					<a class="button" href="#">Read More</a>
-				</div>
+				<?php if(is_active_sidebar('sidebar')) : ?>
+					<?php dynamic_sidebar('sidebar'); ?>
+				<?php endif; ?>
 			</div>
 		</div>
 <?php get_footer(); ?>
